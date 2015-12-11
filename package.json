@@ -17,8 +17,11 @@
   },
   "homepage": "https://github.com/hh83917/contacts#readme",
   "dependencies": {
+    "body-parser": "^1.14.1",
     "bower": "^1.7.0",
     "cors": "^2.7.1",
-    "express": "^4.13.3"
+    "express": "^4.13.3",
+    "mongoose": "^4.3.0",
+    "q": "^1.4.1"
   }
 }
