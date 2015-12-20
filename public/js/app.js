@@ -34,12 +34,12 @@ angular.module('contactsApp', ['ui.router'])
         controller: 'userCtrl'
       })
       .state('home.contact', {
-        url: 'contact',
+        url: '/contact',
         templateUrl: '/templates/contact.html',
         controller: 'contactCtrl'
       })
       .state('home.leadstatus', {
-        url: 'leadstatus',
+        url: '/leadstatus',
         templateUrl: '/templates/leadstatus.html',
         controller: 'leadCtrl'
       });

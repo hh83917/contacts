@@ -25,7 +25,16 @@ passport.use(new GoogleStrategy({
     User.googleInfo.findOne({ googleId: profile.id }).exec().then(function (user) {
       if (!user.googleInfo) {
   			user.googleInfo = new GoogleAcc({
-  				email: profile.emails[0].value,
+  				email:
+            function () {
+              var primaryEmail;
+              for (var i = 0; i < profile.emails.length; i++) {
+                if (profile.emails[i].type === 'account') {
+                  primaryEmail = profile.emails[i].value;
+                }
+              }
+              return primaryEmail;
+            },
 					id: profile.id,
 					displayName: profile.displayName,
 					token: token,
@@ -57,7 +66,7 @@ passport.deserializeUser(function(obj, done) {
 	done(null, obj);
 });
 
-// manage users
+// User endpoints
 app.get('/api/users', userCtrl.getUsers);
 app.get('/api/users/:id', userCtrl.getUser_id);
 app.post('/api/users', userCtrl.addUser);
@@ -65,7 +74,7 @@ app.patch('/api/users/:id', userCtrl.updateUser);
 app.delete('/api/users/:id', userCtrl.archiveUser);
 // app.delete('/api/users/:id', userCtrl.removeUser);
 
-// manage contacts
+// Contact endpoints
 app.get('/api/contacts', contactCtrl.getContacts);
 app.get('/api/contacts/:id', contactCtrl.getContact_id);
 app.post('/api/contacts', contactCtrl.addContact);
@@ -79,10 +88,10 @@ app.get('/auth/google',
   passport.authenticate('google', { scope: 'https://www.googleapis.com/auth/plus.login' }));
 
 app.get('/auth/google/callback',
-  passport.authenticate('google', { failureRedirect: '/login' }),
+  passport.authenticate('google', { failureRedirect: '/#/login' }),
   function(req, res) {
     // Successful authentication, redirect home.
-    res.redirect('/');
+    res.redirect('/#/home/overview');
   }
 );
 
