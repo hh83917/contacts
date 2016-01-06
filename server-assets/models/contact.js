@@ -4,7 +4,7 @@ var contactSchema = new mongoose.Schema({
   first_name: {type: String, required: true},
   last_name: {type: String, required: true},
   company: {type: String, required: true},
-  position: {tyoe: String},
+  position: {type: String},
   address_billing: {type: String, ref: 'Address'},
   address_shipping: {type: String, ref: 'Address'},
   email: {type: String, required: true},

@@ -59,10 +59,7 @@ body {
 .main {
   width: 100%;
   height: 100%;
-}
-
-.page-content {
-
+	margin: 0 auto;
 }
 
 .sidebar {
@@ -70,16 +67,18 @@ body {
   background-color: rgb(52, 115, 255);
   height: 100%;
   box-shadow: 1px 0px 10px #888888;
+	position: fixed;
 }
 
-@media (min-width: 768px) {
+/*@media (min-width: 768px) {
   .sidebar {
-    position: fixed;
+    position: fixed left;
   }
-}
+}*/
 
 .nav-sidebar {
   height: 100%;
+	font-size: 18px;
 }
 
 .nav-sidebar li a{
@@ -92,6 +91,17 @@ body {
   border: none;
   color: rgba(255, 255, 255, 0.8);
   cursor: pointer;
+	font-weight: bold;
+}
+
+#sidebar-button {
+	margin: 15px;
+}
+
+#sidebar-button a {
+	text-decoration: none;
+	font-size: 2em;
+	cursor: pointer;
 }
 
 .page-content {
@@ -99,9 +109,9 @@ body {
 }
 
 .userBox {
-  width: 250px;
+  /*width: 250px;*/
   height: 250px;
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   overflow: auto;
   border-radius: 5px;
 }

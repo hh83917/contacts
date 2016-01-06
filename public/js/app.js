@@ -1,4 +1,4 @@
-angular.module('contactsApp', ['ui.router'])
+angular.module('contactsApp', ['ui.router', 'as.sortable'])
   .config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
     .state('login', {

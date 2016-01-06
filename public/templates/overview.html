@@ -8,19 +8,42 @@
     </form>
   </div>
 </nav> -->
+<div class="">
+  {{overview}}
+</div>
 
-{{overview}}
+<div class="col-sm-12">
+  <div class="panel panel-primary">
+    <div class='panel-heading'>
+      Current Users:
+    </div>
+    <div class="userBox panel-body">
+      <ul ng-repeat='user in users'>
+        <li>{{user.first_name}} {{user.last_name}}</li>
+        <li>{{user.role}}</li>
+        <li>{{user.email}}</li>
+        <li>{{user.reportTo}}</li>
+        <hr>
+      </ul>
+    </div>
+  </div>
+</div>
 
-<div class="container-fluid">
-  <div>
-    Current Users:
-  </div>
-  <div class="userBox col-sm-5">
-    <ul ng-repeat='user in users'>
-      <li>{{user.first_name}} {{user.last_name}}</li>
-      <li>{{user.role}}</li>
-      <li>{{user.email}}</li>
-      <hr>
-    </ul>
-  </div>
+
+<div class="jumbotron row">
+  <ul data-as-sortable data-ng-model="users" class="col-sm-6">
+    <li ng-repeat="user in users" data-as-sortable-item>
+      <div class='panel panel-default' data-as-sortable-item-handle>
+        Index: {{$index}}
+        Name: {{user.first_name}} {{user.last_name}}
+        Role: {{user.role}}
+      </div>
+    </li>
+  </ul>
+  <ul data-as-sortable data-ng-model="users" class="col-sm-6">
+    <li ng-repeat="user in users" data-as-sortable-item>
+      <div class='panel panel-default' data-as-sortable-item-handle>
+      </div>
+    </li>
+  </ul>
 </div>
