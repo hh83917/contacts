@@ -105,6 +105,7 @@ body {
 }
 
 .page-content {
+	padding-top: 70px;
   position: relative;
 }
 
@@ -114,4 +115,8 @@ body {
   /*border: 1px solid black;*/
   overflow: auto;
   border-radius: 5px;
+}
+
+.collapsePanel {
+	cursor: pointer;
 }

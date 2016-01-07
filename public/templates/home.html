@@ -9,9 +9,13 @@
           <li ui-sref="home.leadstatus">Lead Status</li>
         </ul>
     </div>
-    <div id='sidebar-button'>
-      <a type="button" data-toggle='offcanvas' data-target='#sidebar' data-canvas='body'>☰</a>
-    </div>
+    <nav class="navbar navbar-default navbar-fixed-top topNavBar">
+      <div class="container col-sm-12">
+        <div id='sidebar-button'>
+          <a type="button" data-toggle='offcanvas' data-target='#sidebar' data-canvas='body'>☰</a>
+        </div>
+      </div>
+    </nav>
     <!-- <label for="sidebarToggle" class='col-sm-1 toggle'>☰</label> -->
     <div class="page-content col-sm-12" ui-view></div>
   </div>

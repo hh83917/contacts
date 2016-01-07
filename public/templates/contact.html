@@ -1,44 +1,47 @@
 {{test}}
 
-<div class='panel panel-primary'>
-  <div class="panel-heading">
-    <strong>Add New Contact:</strong>
+<button type="button" data-toggle="collapse" data-target="#addNewContactPanel">Add New Contact</button>
+
+<div class='panel panel-primary' data-toggle="collapse" data-target="#addNewContactPanel">
+  <div class="panel-heading collapsePanel">
+    <strong>Add New Contact</strong>
   </div>
-  <div class="panel-body">
-    <div class="row">
-      <div class="form-group col-sm-6">
-        <div class="input-group input-group-sm">
-          <span class='input-group-addon'>First Name</span>
-          <input type="text" class='form-control' placeholder="First Name...">
+  <div id="addNewContactPanel" class="collapse">
+    <div class="panel-body">
+      <div class="row">
+        <div class="form-group col-sm-6">
+          <div class="input-group input-group-sm">
+            <span class='input-group-addon'>First Name</span>
+            <input type="text" class='form-control' placeholder="First Name...">
+          </div>
+        </div>
+        <div class="form-group col-sm-6">
+          <div class='input-group input-group-sm'>
+            <span class='input-group-addon'>Last Name</span>
+            <input type="text" class='form-control' placeholder="Last Name...">
+          </div>
         </div>
       </div>
-      <div class="form-group col-sm-6">
-        <div class='input-group input-group-sm'>
-          <span class='input-group-addon'>Last Name</span>
-          <input type="text" class='form-control' placeholder="Last Name...">
+      <div class="row">
+        <div class="form-group col-sm-6">
+          <div class="input-group input-group-sm">
+            <span class='input-group-addon'>Company</span>
+            <input type="text" class='form-control' placeholder="Company...">
+          </div>
+        </div>
+        <div class="form-group col-sm-6">
+          <div class="input-group input-group-sm">
+            <span class='input-group-addon'>Position</span>
+            <input type="text" class='form-control' placeholder="Position...">
+          </div>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="form-group col-sm-6">
-        <div class="input-group input-group-sm">
-          <span class='input-group-addon'>Company</span>
-          <input type="text" class='form-control' placeholder="Company...">
-        </div>
-      </div>
-      <div class="form-group col-sm-6">
-        <div class="input-group input-group-sm">
-          <span class='input-group-addon'>Position</span>
-          <input type="text" class='form-control' placeholder="Position...">
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="form-group col-sm-6">
-        <div class="input-group input-group-sm">
-          <span class='input-group-addon'>E-mail</span>
-          <input type="text" class='form-control' placeholder="E-mail...">
-          <!-- <span class='input-group-btn'>
+      <div class="row">
+        <div class="form-group col-sm-6">
+          <div class="input-group input-group-sm">
+            <span class='input-group-addon'>E-mail</span>
+            <input type="text" class='form-control' placeholder="E-mail...">
+            <!-- <span class='input-group-btn'>
             <button type="button" class='btn btn-default' ng-click='addOtherEmail()'>+</button>
           </span> -->
         </div>
@@ -64,7 +67,7 @@
         </div>
       </div>
     </div>
-    
+
     <div class="row">
       <div class="col-sm-6">
         <div class="panel panel-info">
@@ -90,6 +93,8 @@
 
     </div>
   </div>
+</div>
+
 </div>
 
 <!-- <form class="" method="post">
